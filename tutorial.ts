@@ -54,3 +54,18 @@ const Person2: Person = {
 
 Person1.greet(`Welcome to TypeScript! ${Person1.name}`);
 Person2.greet(`Welcome to TypeScript! ${Person2.name}`);
+
+// Union in TypeScript
+
+// Variable with more than one type using Union
+let userId: string | number;
+userId = "ABC123"; // valid
+userId = 1001; // valid
+
+// Function with more than one type using Union
+const printId = (userId: string | number): void => {
+  console.log(`ID: ${userId}`);
+};
+
+printId("ABC123");
+printId(456789);
