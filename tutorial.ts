@@ -69,3 +69,22 @@ const printId = (userId: string | number): void => {
 
 printId("ABC123");
 printId(456789);
+
+// Type in TypeScript
+
+type IDField = string | number;
+let userID1: IDField = "mhm-5999";
+let userID2: IDField = 5999;
+
+const displayID = (id: IDField): void => {
+  console.log(`User ID: ${id}`);
+};
+
+displayID(userID1);
+displayID(userID2);
+
+// Type and Interface are similar but Type can be used for more complex types like
+// unions and intersections, while Interface is primarily used for defining the shape of objects.
+// Type can be used to create type aliases, while Interface cannot. Moreover, Interface can be extended
+// and implemented, while Type cannot.
+// Rule: Interface → objects, Type → complex types.
