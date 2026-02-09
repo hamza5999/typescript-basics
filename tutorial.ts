@@ -120,3 +120,19 @@ signContract({
 
 // Through intersection, we can create a new type that combines the properties of both UserIdentity and BusinessPartner.
 // This allows us to create a more complex type that can be used in our application.
+
+// Enum in TypeScript
+
+enum EmployeeRole {
+  Admin = "Admin",
+  Manager = "Manager",
+  Developer = "Developer",
+  Designer = "Designer",
+}
+
+const printEmpoyeeRole = (role: EmployeeRole): void => {
+  console.log(`Employee Role: ${role}`);
+};
+
+printEmpoyeeRole(EmployeeRole.Admin);
+printEmpoyeeRole(EmployeeRole.Developer);
