@@ -88,3 +88,35 @@ displayID(userID2);
 // Type can be used to create type aliases, while Interface cannot. Moreover, Interface can be extended
 // and implemented, while Type cannot.
 // Rule: Interface → objects, Type → complex types.
+
+// Intersection in TypeScript
+
+interface UserIdentity {
+  id: number;
+  name: string;
+  email: string;
+}
+
+interface BusinessPartner {
+  companyName: string;
+  creditScore: number;
+}
+
+type Employee = UserIdentity & BusinessPartner;
+
+const signContract = (employee: Employee): void => {
+  console.log(
+    `Contract signed with ${employee.name} from ${employee.companyName}`,
+  );
+};
+
+signContract({
+  id: 1,
+  name: "Alice",
+  email: "alice@example.com",
+  companyName: "Tech Solutions Inc.",
+  creditScore: 750,
+});
+
+// Through intersection, we can create a new type that combines the properties of both UserIdentity and BusinessPartner.
+// This allows us to create a more complex type that can be used in our application.
